@@ -54,7 +54,7 @@ pipeline {
             //deleteDir()
         }
         success {
-            echo 'This will run only if the build succeeds'
+            echo 'This will run only if the build succeeds!!!'
         }
         failure {
             echo 'This will run only if the build fails'
