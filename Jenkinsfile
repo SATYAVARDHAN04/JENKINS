@@ -3,10 +3,25 @@ pipeline {
         label 'AGENT1'
     }
 
+    environment {
+        COURSE='Devops'
+    }
+
+    options {
+        disableConcurrentBuilds()
+        timeout(time:30, unit:'MINUTES')
+    }
+
+    parameters {
+        string(name: 'BRANCH', defaultValue: 'CSE', description: 'BRANCH name')
+    }
+
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
+                echo "${COURSE}"
+                echo "${params.BRANCH}"
             }
         }
         stage('Test') {
