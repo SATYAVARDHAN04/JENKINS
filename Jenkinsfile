@@ -27,11 +27,23 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+                script{
+                    if(params.BRANCH == 'CSE'){
+                        echo 'CSE branch using groovy method'
+                    }else{
+                        echo 'Other branch using groovy method'
+                    }
+                }
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                script{
+                    sh '''
+                    echo "Deploying to $params.BRANCH using shell script method"
+                    '''
+                }
             }
         }
     }
