@@ -20,8 +20,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                echo "${COURSE}"
-                echo "${params.BRANCH}"
+                echo "${COURSE} is very good"
+                echo "${params.BRANCH} is bad"
             }
         }
         stage('Test') {
