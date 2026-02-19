@@ -41,7 +41,7 @@ pipeline {
                 echo 'Deploying....'
                 script{
                     sh '''
-                    echo "Deploying to $params.BRANCH using shell script method"
+                    echo "Deploying to ${params.BRANCH} using shell script method"
                     '''
                 }
             }
